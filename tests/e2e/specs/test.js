@@ -10,7 +10,7 @@ describe('calculator', () => {
     cy.get('.display').should('contain', '2')
   })
 
-  it('should do arithmetical operations update the display the result', () => {
+  it('should do arithmetical operations updating the display with the result', () => {
     cy.get('#number3').click();
     cy.get('#operator_multiply').click();
     cy.get('#number5').click();
