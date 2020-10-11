@@ -92,10 +92,14 @@ export default {
       this.runningTotal = parseFloat(this.previousTotal) * parseFloat(number);
     },
     divide(number) {
+      if (number!=0){
       this.runningTotal = parseFloat(this.previousTotal) / parseFloat(number);
-    },
+    } else {
+      this.runningTotal ="Error: can't divide by 0";
+    }
   },
-};
+},
+}
 </script>
 
 <style scoped>
