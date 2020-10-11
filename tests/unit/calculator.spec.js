@@ -41,10 +41,10 @@ describe('App.vue', () => {
   it('should be able to concatenate multiple number button clicks', () => {
     const wrapper = shallowMount(App);
     wrapper.vm.previousTotal = 0;
-    wrapper.vm.numberClick('17')
-    wrapper.vm.numberClick('112')
-    wrapper.vm.numberClick('08')
-    expect(wrapper.vm.runningTotal).to.equal(1711208);
+    wrapper.vm.numberClick('7')
+    wrapper.vm.numberClick('8')
+    wrapper.vm.numberClick('9')
+    expect(wrapper.vm.runningTotal).to.equal(789);
   })
 
   it('should be able to chain multiple operations together', () => {
@@ -54,13 +54,13 @@ describe('App.vue', () => {
     wrapper.vm.operatorClick('+');
     wrapper.vm.numberClick('2');
     wrapper.vm.operatorClick('*');
-    wrapper.vm.numberClick('10');
+    wrapper.vm.numberClick('5');
     wrapper.vm.operatorClick('-');
-    wrapper.vm.numberClick('10');
+    wrapper.vm.numberClick('5');
     wrapper.vm.operatorClick('/');
-    wrapper.vm.numberClick('3');
+    wrapper.vm.numberClick('9');
     wrapper.vm.operatorClick('=');
-    expect(wrapper.vm.runningTotal).to.equal(30);
+    expect(wrapper.vm.runningTotal).to.equal(5);
   })
 
   it('should be able to clear the running total without affecting the calculation', () => {
@@ -70,8 +70,8 @@ describe('App.vue', () => {
     wrapper.vm.operatorClick('+');
     wrapper.vm.numberClick('2');
     wrapper.vm.clearClick();
-    wrapper.vm.numberClick('12');
+    wrapper.vm.numberClick('8');
     wrapper.vm.operatorClick('=');
-    expect(wrapper.vm.runningTotal).to.equal(20);
+    expect(wrapper.vm.runningTotal).to.equal(16);
   })
 })
